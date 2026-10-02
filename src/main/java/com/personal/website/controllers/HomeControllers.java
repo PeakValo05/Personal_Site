@@ -1,6 +1,10 @@
 package com.personal.website.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.client.RestClientException;
+import com.personal.website.models.GithubRepoModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,11 +19,21 @@ public class HomeControllers {
     @GetMapping("/")
     public String home(Model model) {
 
-        model.addAttribute("repoCount", githubServices.getGithubRepos().size());
-        model.addAttribute("repos", githubServices.getGithubRepos());
+        List<GithubRepoModel> repos = List.of();
+        try {
+            repos = githubServices.getGithubRepos();
+        } catch (RestClientException e) {
+            System.err.println("Could not load GitHub repos: " + e.getMessage());
+        }
+        model.addAttribute("repoCount", repos.size());
+        model.addAttribute("repos", repos);
 
-        int commitCount = githubServices.getTotalCommitCount("Personal_Site");
-        System.out.println("COMMIT COUNT = " + commitCount);
+        int commitCount = 0;
+        try {
+            commitCount = githubServices.getTotalCommitCount("Personal_Site");
+        } catch (RestClientException e) {
+            System.err.println("Could not load commit count: " + e.getMessage());
+        }
         model.addAttribute("commitCount", commitCount);
 
         model.addAttribute("contact", new ContactModel());
