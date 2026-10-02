@@ -127,6 +127,11 @@ button {
   box-shadow: 0 12px 28px rgba(47, 125, 99, 0.28);
 }
 
+.nav-cta {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .secondary-btn {
   background: transparent;
   color: var(--ink);

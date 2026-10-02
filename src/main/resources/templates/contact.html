@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="brand-wrap">
+          <img src="/images/PeaksValo Mountain Gradient Logo.png" alt="PeaksValo logo" class="brand-logo">
+          <div class="brand-copy">
+            <span class="brand-name">PeaksValo</span>
+            <small>Software Development Student</small>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero-section">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">Get in touch</span>
+        <h1>Contact Me</h1>
+      </div>
+      <section class="contact-me" aria-label="Contact form">
+        <form class="contact-form" th:action="@{/contact}" method="post" th:object="${contact}" >
+          <p class="contact-status contact-status-success" th:if="${contactSuccess}" th:text="${contactSuccess}" role="status"></p>
+          <p class="contact-status contact-status-error" th:if="${contactError}" th:text="${contactError}" role="alert"></p>
+          <input type="text" class="contact-field" placeholder="Your First Name" aria-label="Your first name" name="firstName" required>
+          <input type="text" class="contact-field" placeholder="Your Last Name" aria-label="Your last name" name="lastName" required>
+          <input type="email" class="contact-field" placeholder="Your Email" aria-label="Your email" name="email" required>
+          <textarea class="contact-textarea" placeholder="Your Message" aria-label="Your message" name="message" required></textarea>
+          <div class="contact-actions">
+            <button class="contact-submit" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex justify-content-center">
+      <p>&copy; 2024 PeaksValo. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

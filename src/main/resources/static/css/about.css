@@ -15,6 +15,22 @@
   gap: 1rem;
 }
 
+.contact-status {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+}
+
+.contact-status-success {
+  background: rgba(47, 125, 99, 0.18);
+  color: #d8f3e7;
+}
+
+.contact-status-error {
+  background: rgba(190, 55, 55, 0.2);
+  color: #ffe1e1;
+}
+
 .contact-field,
 .contact-textarea {
   width: 100%;
