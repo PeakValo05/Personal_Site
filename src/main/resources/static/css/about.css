@@ -1,0 +1,66 @@
+.contact-me {
+  padding: 1rem 0 4rem;
+}
+
+.contact-form {
+  width: min(680px, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(19, 34, 56, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(19, 34, 56, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-field,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid rgba(47, 125, 99, 0.75);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f7f5f2 0%, #eef3ee 100%);
+  color: #000000;
+  padding: 0.9rem 1rem;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contact-field::placeholder,
+.contact-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.contact-field:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.28);
+}
+
+.contact-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-submit {
+  background: linear-gradient(135deg, #2f7d63 0%, #1f5c49 100%);
+  color: white;
+  border-radius: 999px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 12px 28px rgba(47, 125, 99, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-1px);
+}
