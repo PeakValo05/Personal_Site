@@ -38,7 +38,7 @@ public class ContactService {
         Map<String, Object> payload = Map.of(
             "from", fromEmail,
             "to", List.of(toEmail),
-            "subject", "Portfolio Contact - " + "PeaksValo",
+            "subject", "Portfolio Contact - " + "Jackson Wiser",
             "reply_to", email,
             "text", "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
         );
