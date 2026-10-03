@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">    
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/hero.css">
-    <link rel="stylesheet" href="/css/about.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <meta name="description" content="Learn about Jackson Wiser, a software development student, and explore his technical skills.">
+    <title>About | PeaksValo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/about.css">
 </head>
-<body>
+<body class="about-page">
   <header class="site-header">
     <div class="container">
       <div class="header-row">
-        <div class="brand-wrap">
-          <img src="/images/PeaksValo Mountain Gradient Logo.png" alt="PeaksValo logo" class="brand-logo">
-          <div class="brand-copy">
+        <a class="brand-wrap text-decoration-none text-reset" href="/" aria-label="PeaksValo home">
+          <img src="/images/PeaksValo Mountain Gradient Logo.png" alt="" class="brand-logo">
+          <span class="brand-copy">
             <span class="brand-name">PeaksValo</span>
             <small>Software Development Student</small>
-          </div>
-        </div>
+          </span>
+        </a>
 
         <nav class="main-nav" aria-label="Main navigation">
           <a href="/">Home</a>
-          <a href="/about">About</a>
-          
-          
-          <a href="/contact" class="nav-cta" style="text-decoration: none; color: white">Contact Me</a>
+          <a href="/about" aria-current="page">About</a>
+          <a href="/contact" class="nav-cta">Contact Me</a>
         </nav>
       </div>
     </div>
@@ -40,13 +33,81 @@
 
   <main class="hero-section">
     <div class="container hero-grid">
-      <div class="hero-copy">
+      <section class="hero-copy" aria-labelledby="about-heading">
         <span class="eyebrow">About Me</span>
-        <h1>Jackson Wiser</h1>
+        <h1 id="about-heading">Jackson Wiser</h1>
         <p>
-          I am a software development student passionate about building modern, user-focused applications with a focus on clean design, functionality, and reliable backend development.
+          I am a software development student passionate about building modern, user-focused applications. I care about thoughtful design, useful functionality, and reliable backend development.
         </p>
-      </div>
+      </section>
+
+      <section class="skills-panel" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div class="skills-list">
+          <div class="skill-group">
+            <div class="skill-icon">
+              <img src="/images/code.svg" alt="">
+            </div>
+            <div class="skill-content">
+              <h3>Languages</h3>
+              <ul class="skill-tags" aria-label="Languages">
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-icon">
+              <img src="/images/gear.svg" alt="">
+            </div>
+            <div class="skill-content">
+              <h3>Frameworks &amp; Libraries</h3>
+              <ul class="skill-tags" aria-label="Frameworks and libraries">
+                <li>Spring Boot</li>
+                <li>Thymeleaf</li>
+                <li>Bootstrap</li>
+                <li>JPA / Hibernate</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-icon">
+              <img src="/images/database.svg" alt="">
+            </div>
+            <div class="skill-content">
+              <h3>Databases &amp; Cloud</h3>
+              <ul class="skill-tags" aria-label="Databases and cloud">
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>AWS</li>
+                <li>Heroku</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-icon">
+              <img src="/images/tool.svg" alt="">
+            </div>
+            <div class="skill-content">
+              <h3>Tools &amp; Platforms</h3>
+              <ul class="skill-tags" aria-label="Tools and platforms">
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Maven</li>
+                <li>Docker</li>
+                <li>VS Code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -55,6 +116,5 @@
       <p>&copy; 2024 PeaksValo. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
 </html>
