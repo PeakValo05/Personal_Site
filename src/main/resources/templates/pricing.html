@@ -22,12 +22,24 @@
           </span>
         </a>
 
+     
         <nav class="main-nav" aria-label="Main navigation">
           <a href="/">Home</a>
           <a href="/pricing" aria-current="page">Pricing</a>
           <a href="/about">About</a>
           <a href="/contact" class="nav-cta">Contact Me</a>
         </nav>
+
+        <div class="nav-cta-container d-flex align-items-center justify-content-end">
+          <button id="cart-toggle" class="nav-toggle" aria-label="Toggle navigation" style="border: none; background: none;">
+            <span class="hamburger">
+              <img src="/images/shopping2.svg" alt="Shopping Cart" class="hamburger-icon" width="40" height="40">
+            </span>
+          </button>
+        </div>
+
+
+        <!-- </nav> -->
       </div>
     </div>
   </header>
@@ -43,34 +55,50 @@
       <div class="pricing-grid">
         <article class="pricing-card">
           <div class="pricing-card-heading">
+
+          <div class="plan-header d-flex">
             <h2>Bronze</h2>
+            <img src="/images/bronze-medal.png" alt="Bronze Plan" class="plan-icon" width="40" height="40">
+          </div>
+
             <p class="plan-summary">A clear starting point for your project.</p>
-            <p class="plan-price"><span class="visually-hidden">Price: </span>$350</p>
+            <p class="plan-price"><span class="visually-hidden">Price: </span><span style="font-weight: bold; font-size: 0.5em; letter-spacing: 0.1em;">Starting at</span> $350</p>
           </div>
           <ul class="package-features">
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Custom designs</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Landing pages</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Up to 5 pages</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>2 rounds of revisions</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile responsiveness</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Contact form integration</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Launch support</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>1 custom-designed page</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Social media links</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Image optimization for faster loading</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Basic SEO setup</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile, tablet, and desktop responsiveness</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Domain setup assistance</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>1 round of revisions</li>
           </ul>
           <a href="/contact" class="pricing-select">Choose Bronze <span aria-hidden="true">→</span></a>
         </article>
 
         <article class="pricing-card">
           <div class="pricing-card-heading">
+
+            <div class="plan-header d-flex">
             <h2>Silver</h2>
+            <img src="/images/silver-medal.png" alt="Silver Plan" class="plan-icon" width="40" height="40">
+            </div>
+
+
             <p class="plan-summary">Best for small businesses.</p>
-            <p class="plan-price"><span class="visually-hidden">Price: </span>$750</p>
+            <p class="plan-price"><span class="visually-hidden">Price: </span><span style="font-weight: bold; font-size: 0.5em; letter-spacing: 0.1em;">Starting at</span> $750</p>
           </div>
           <ul class="package-features">
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Custom designs</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Landing pages</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Up to 5 pages</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>5 custom-designed pages</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Social media links</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Basic SEO setup</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Image optimization for faster loading</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>2 rounds of revisions</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile responsiveness</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile, tablet, and desktop responsiveness</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Contact form integration</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Launch support</li>
           </ul>
@@ -79,16 +107,23 @@
 
         <article class="pricing-card">
           <div class="pricing-card-heading">
+            <div class="plan-header d-flex">
             <h2>Gold</h2>
+            <img src="/images/gold-medal.png" alt="Gold Plan" class="plan-icon" width="40" height="40">
+            </div>
             <p class="plan-summary">Best for growing businesses.</p>
-            <p class="plan-price"><span class="visually-hidden">Price: </span>$1,500</p>
+            <p class="plan-price"><span class="visually-hidden">Price: </span><span style="font-weight: bold; font-size: 0.5em; letter-spacing: 0.1em;">Starting at</span> $1,500</p>
           </div>
           <ul class="package-features">
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Custom designs</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Landing pages</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Up to 10 pages</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>2 rounds of revisions</li>
-            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile responsiveness</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>10 custom-designed pages</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Photo gallery or project showcase</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Basic SEO setup</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Social media links</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Domain setup assistance</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>3 rounds of revisions</li>
+            <li><span class="checkmark" aria-hidden="true">&#10003;</span>Mobile, tablet, and desktop responsiveness</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Contact form integration</li>
             <li><span class="checkmark" aria-hidden="true">&#10003;</span>Launch support</li>
           </ul>
