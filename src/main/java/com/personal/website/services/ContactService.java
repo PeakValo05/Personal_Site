@@ -29,6 +29,7 @@ public class ContactService {
     public void sendContactMessage(
             String name,
             String email,
+            
             String message) {
 
         if (apiKey.isBlank()) {
@@ -43,6 +44,31 @@ public class ContactService {
             "text", "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
         );
 
+        sendEmail(payload);
+    }
+
+    public void sendOrderRequest(String name, String email, String packageName, int packagePrice, String message) {
+        if (apiKey.isBlank()) {
+            throw new IllegalStateException("Resend API key is not configured");
+        }
+
+        Map<String, Object> payload = Map.of(
+            "from", fromEmail,
+            "to", List.of(toEmail),
+            "subject", "New Website Order Request - " + packageName,
+            "reply_to", email,
+            "text", "A new order request was submitted.\n\n"
+                + "Name: " + name + "\n"
+                + "Email: " + email + "\n"
+                + "Package: " + packageName + "\n"
+                + "Starting price: $" + packagePrice + "\n"
+                + "Description: " + message + "\n"
+        );
+
+        sendEmail(payload);
+    }
+
+    private void sendEmail(Map<String, Object> payload) {
         restClient.post()
             .uri("/emails")
             .header(HttpHeaders.AUTHORIZATION, "Bearer " + apiKey)
