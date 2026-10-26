@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+
+    <link rel="stylesheet" href="/css/gameportal.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/">PEAKS<span style="color:#FFB347">VALO</span></a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href="/projects">Projects</a>
+                <a class="nav-link active" aria-current="page" href="/games">Games</a>
+                <a class="nav-link" href="/contact">Contact</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Main content -->
+<main>
+    <section class="hero container text-center">
+        <h1 class="brand" aria-label="PEAKSVALO">
+            <svg viewBox="0 0 1000 280" role="img" aria-hidden="true">
+                <defs>
+                    <path id="brand-arch" d="M 50 235 Q 500 -25 950 235" />
+                </defs>
+                <text>
+                    <textPath href="#brand-arch" startOffset="50%" text-anchor="middle"><tspan fill="white">PEAKS</tspan><tspan fill="#FFB347">ARCADE</tspan></textPath>
+                </text>
+            </svg>
+        </h1>
+        <p class="tagline">Play <span>|</span> Build <span>|</span> Share</p>
+        <p class="subtitle">Pick a portal and jump into a game.</p>
+    </section>
+
+    <section class="container portal-grid">
+        <a class="portal-card" href="/clicker" aria-label="Play Cookie Clicker">
+            <img src="/game assets/cookie-portal-bg.png" alt="" class="portal-img">
+            <div class="portal-overlay">
+                <img src="/game assets/cookie.png" alt="" class="portal-icon">
+                <h2>Cookie Clicker</h2>
+                <p>Bake, upgrade, and build your cookie empire.</p>
+                <span class="portal-cta">Play now &rarr;</span>
+            </div>
+        </a>
+        <div class="portal-card portal-card-soon" aria-label="Coming soon">
+            <div class="portal-overlay portal-overlay-soon">
+                <span class="portal-lock">?</span>
+                <h2>Coming Soon</h2>
+                <p>A new game is on the way.</p>
+            </div>
+        </div>
+        <div class="portal-card portal-card-soon" aria-label="Coming soon">
+            <div class="portal-overlay portal-overlay-soon">
+                <span class="portal-lock">?</span>
+                <h2>Coming Soon</h2>
+                <p>A new game is on the way.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

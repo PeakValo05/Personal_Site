@@ -1,0 +1,301 @@
+/* Set the warm cocoa background and cream-colored game text. */
+body {
+    min-height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff2dc;
+    background:
+        radial-gradient(ellipse at 50% 8%, rgba(209, 137, 73, 0.55), transparent 42%),
+        linear-gradient(145deg, #744326, #482719 58%, #30190f);
+}
+
+/* Add animated chocolate-colored ribbons across the background. */
+body::before {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(239, 172, 96, 0.2), transparent 72%),
+        repeating-linear-gradient(
+            115deg,
+            transparent 0 112px,
+            rgba(40, 15, 9, 0.56) 112px 148px,
+            rgba(139, 71, 37, 0.62) 148px 154px,
+            rgba(40, 15, 9, 0.56) 154px 168px,
+            transparent 168px 295px
+        );
+    background-size: 100% 295px;
+    content: "";
+    pointer-events: none;
+    animation: chocolate-flow 12s linear infinite;
+}
+
+/* Create glossy chocolate drips along the top edge. */
+body::after {
+    position: fixed;
+    z-index: 0;
+    inset: 0 0 auto;
+    height: 132px;
+    background:
+        linear-gradient(#35160e, #35160e) 8% 0 / 48px 56px no-repeat,
+        radial-gradient(ellipse 24px 28px at 50% 0%, #35160e 98%, transparent 100%) 8% 54px / 48px 56px no-repeat,
+        linear-gradient(rgba(255, 196, 126, 0.24), rgba(255, 196, 126, 0)) 9% 8px / 5px 43px no-repeat,
+        linear-gradient(#35160e, #35160e) 31% 0 / 68px 83px no-repeat,
+        radial-gradient(ellipse 34px 32px at 50% 0%, #35160e 98%, transparent 100%) 31% 81px / 68px 64px no-repeat,
+        linear-gradient(rgba(255, 196, 126, 0.2), rgba(255, 196, 126, 0)) 32% 8px / 6px 68px no-repeat,
+        linear-gradient(#35160e, #35160e) 66% 0 / 52px 47px no-repeat,
+        radial-gradient(ellipse 26px 30px at 50% 0%, #35160e 98%, transparent 100%) 66% 45px / 52px 60px no-repeat,
+        linear-gradient(rgba(255, 196, 126, 0.22), rgba(255, 196, 126, 0)) 67% 8px / 5px 34px no-repeat,
+        linear-gradient(#35160e, #35160e) 89% 0 / 76px 69px no-repeat,
+        radial-gradient(ellipse 38px 34px at 50% 0%, #35160e 98%, transparent 100%) 89% 67px / 76px 64px no-repeat,
+        linear-gradient(rgba(255, 196, 126, 0.2), rgba(255, 196, 126, 0)) 90% 8px / 6px 54px no-repeat;
+    content: "";
+    pointer-events: none;
+}
+
+/* Keep game content above the decorative background layers. */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.cookie-title {
+    padding-top: 40px;
+    margin-bottom: 0.25rem;
+    color: #fff0d3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-shadow: 0 3px 0 #713a20, 0 6px 18px rgba(28, 11, 6, 0.65);
+}
+
+.cookie-count {
+    min-width: 128px;
+    padding: 0.25rem 1.5rem;
+    border: 2px solid rgba(255, 220, 168, 0.7);
+    border-radius: 999px;
+    background: linear-gradient(180deg, #8d4d2c, #542a1b);
+    box-shadow: 0 5px 14px rgba(28, 11, 6, 0.45), inset 0 1px rgba(255, 240, 211, 0.2);
+    color: #fff0d3;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(28, 11, 6, 0.6);
+}
+
+/* Move the chocolate ribbons downward in a seamless loop. */
+@keyframes chocolate-flow {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 295px;
+    }
+}
+
+/* Turn off the background animation for players who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
+}
+
+/* The clickable cookie: sized responsively, with a hover grow and a press shrink. */
+.cookie-img {
+    transition: transform 0.1s;
+    user-select: none;
+}
+
+.cookie-img:active {
+    transform: scale(0.9);
+}
+
+.cookie-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(0 12px 18px rgba(28, 11, 6, 0.6));
+    transition: transform 0.2s ease;
+}
+
+.cookie-button:hover {
+    transform: scale(1.05);
+}
+
+.cookie-button .cookie-img {
+    width: clamp(200px, 40vw, 320px);
+    height: auto;
+}
+
+/* Area around the cookie; positioned so floating popups are placed relative to it. */
+.cookie-arena {
+    position: relative;
+    min-height: 60vh;
+    overflow: hidden;
+}
+
+/* "+N" text that floats up and fades out after each click. */
+.click-popup {
+    position: absolute;
+    pointer-events: none;
+    color: #fff0d3;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(28, 11, 6, 0.8);
+    transform: translate(-50%, -50%);
+    animation: popup-rise 0.9s ease-out forwards;
+}
+
+@keyframes popup-rise {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -140px);
+    }
+}
+
+/* Small label under the counter showing the current click strength. */
+.cookie-power {
+    margin-top: 0.5rem;
+    color: #f0c27a;
+    font-size: 1rem;
+    text-shadow: 0 2px 3px rgba(28, 11, 6, 0.6);
+}
+
+/* Button that opens the upgrade panel. */
+.upgrade-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 5;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.upgrade-toggle .cookie-img {
+    width: 75px;
+    height: 75px;
+}
+
+.upgrade-buy:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#upgradePanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    max-width: 100%;
+    height: 100vh;
+    padding: 1.25rem;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #4a2a1c, #2e170f);
+    border-left: 2px solid rgba(255, 220, 168, 0.5);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.4s ease, visibility 0.4s;
+    z-index: 1000;
+}
+
+#upgradePanel.open {
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.upgrade-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 220, 168, 0.3);
+}
+
+.upgrade-header h2 {
+    margin: 0;
+    color: #fff0d3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 0 #713a20;
+}
+
+.upgrade-close {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 220, 168, 0.5);
+    border-radius: 50%;
+    background: rgba(255, 240, 211, 0.08);
+    color: #fff0d3;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.upgrade-close:hover {
+    background: rgba(200, 60, 40, 0.8);
+    transform: rotate(90deg);
+}
+
+.upgrade-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.upgrade-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 220, 168, 0.35);
+    border-radius: 12px;
+    background: linear-gradient(180deg, #7a4329, #542a1b);
+    box-shadow: 0 4px 10px rgba(28, 11, 6, 0.4), inset 0 1px rgba(255, 240, 211, 0.15);
+}
+
+.upgrade-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.upgrade-name {
+    color: #fff0d3;
+    font-weight: 700;
+}
+
+.upgrade-cost {
+    color: #f0c27a;
+    font-size: 0.85rem;
+}
+
+.upgrade-buy {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background: #ffb347;
+    color: #3b2118;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.upgrade-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 179, 71, 0.5);
+}
+
+.upgrade-buy:active {
+    transform: scale(0.95);
+}
