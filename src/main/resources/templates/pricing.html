@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="/css/hero.css">
     <link rel="stylesheet" href="/css/cart-panel.css">
     <link rel="stylesheet" href="/css/pricing.css">
+    <link rel="stylesheet" href="/css/side-panel.css">
+    <link rel="stylesheet" href="/css/ai-chat.css">
+    <link rel="stylesheet" href="/css/transition.css">
+    <script src="/js/bot.js" defer></script>
+    <script src="/js/side-panel.js" defer></script>
 </head>
 <body class="pricing-page">
   <header class="site-header">
@@ -29,6 +34,10 @@
           <a href="/">Home</a>
           <a href="/pricing" aria-current="page">Pricing</a>
           <a href="/about">About</a>
+          <button id="toggleBtn" class="nav-toggle" type="button" aria-label="Chat with me" aria-controls="sidePanel" aria-expanded="false">
+            <span class="nav-toggle-dot" aria-hidden="true"></span>
+            Chat with me
+          </button>
           <a href="/contact" class="nav-cta">Contact Me</a>
         </nav>
 
@@ -46,6 +55,8 @@
       </div>
     </div>
   </header>
+
+  <th:block th:replace="~{fragments/ai-chat :: panel}"></th:block>
 
   <main class="hero-section pricing-section">
     <div class="container">
@@ -223,6 +234,7 @@
   </footer>
 
 <script th:src="@{/js/cart.js}"></script>
+  <script src="/js/transition.js"></script>
 
 </body>
 </html>

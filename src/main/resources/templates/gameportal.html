@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Game Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="/css/gameportal.css">
     <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/side-panel.css">
+    <link rel="stylesheet" href="/css/ai-chat.css">
+    <script src="/js/bot.js" defer></script>
+    <script src="/js/side-panel.js" defer></script>
 </head>
 
 
@@ -37,12 +41,18 @@
                 <a class="nav-link" href="/about">About</a>
                 <a class="nav-link" href="/pricing">Pricing</a>
                 <a class="nav-link active" aria-current="page" href="/games">Games</a>
+                <button id="toggleBtn" class="nav-toggle chat-game-toggle" type="button" aria-label="Chat with me" aria-controls="sidePanel" aria-expanded="false">
+                    <span class="nav-toggle-dot" aria-hidden="true"></span>
+                    Chat with me
+                </button>
                 <a class="nav-link" href="/contact">Contact</a>
             </div>
         </div>
 
     </div>
 </nav>
+
+<th:block th:replace="~{fragments/ai-chat :: panel}"></th:block>
 
 <!-- Main content -->
 <main>

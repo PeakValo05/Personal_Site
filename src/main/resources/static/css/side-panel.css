@@ -1,7 +1,7 @@
-.panel-overlay {
+body > .panel-overlay {
     position: fixed;
     inset: 0;
-    z-index: 999;
+    z-index: 1001;
     background: rgba(11, 25, 39, 0.46);
     opacity: 0;
     visibility: hidden;
@@ -18,10 +18,10 @@ body.panel-is-open {
     overflow: hidden;
 }
 
-.side-panel {
+body > .side-panel {
     position: fixed;
     inset: 0 0 0 auto;
-    z-index: 1000;
+    z-index: 1002;
     display: flex;
     flex-direction: column;
     width: min(440px, 100%);
@@ -115,6 +115,8 @@ body.panel-is-open {
     display: flex;
     flex: 1;
     flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
     padding: 2rem clamp(1.25rem, 6vw, 2rem);
 }
 
@@ -279,7 +281,7 @@ body.panel-is-open {
     text-align: center;
 }
 
-.nav-toggle {
+.nav-toggle:not(#cart-toggle) {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -295,13 +297,13 @@ body.panel-is-open {
     transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.nav-toggle:hover {
+.nav-toggle:not(#cart-toggle):hover {
     border-color: rgba(47, 125, 99, 0.32);
     background: #f1f7f3;
     transform: translateY(-1px);
 }
 
-.nav-toggle:focus-visible,
+.nav-toggle:not(#cart-toggle):focus-visible,
 .panel-close:focus-visible,
 .panel-action:focus-visible {
     outline: 3px solid rgba(47, 125, 99, 0.35);
@@ -309,7 +311,7 @@ body.panel-is-open {
 }
 
 @media (max-width: 700px) {
-    .nav-toggle {
+    .nav-toggle:not(#cart-toggle) {
         padding: 0.5rem;
         font-size: 0;
     }
@@ -318,6 +320,18 @@ body.panel-is-open {
         width: 0.55rem;
         height: 0.55rem;
     }
+
+    .nav-toggle.chat-game-toggle:not(#cart-toggle) {
+        padding: 0.55rem 0.8rem;
+        font-size: 0.82rem;
+    }
+}
+
+body > .clicker-chat-toggle {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 5;
 }
 
 @media (prefers-reduced-motion: reduce) {

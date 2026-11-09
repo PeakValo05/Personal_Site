@@ -50,6 +50,7 @@ const sendMessage = async (event) => {
         const botReply = (await response.text()).trim();
         pendingMessage.remove();
         addMessageToChat(botReply || "I do not have a response yet. Please try again.", "bot");
+        handleAINavigate(botReply || "");
     } catch (error) {
         pendingMessage.remove();
         addMessageToChat("I could not connect right now. Please try again or use the contact form.", "bot");
@@ -61,3 +62,11 @@ const sendMessage = async (event) => {
 };
 
 chatForm.addEventListener("submit", sendMessage);
+
+function handleAINavigate(response) {
+    const navigateMatch = response.match(/\[NAVIGATE:(.*?)\]/);
+    if (navigateMatch) {
+        const route = navigateMatch[1];
+        window.location.href = route;
+    }
+}

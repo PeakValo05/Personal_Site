@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="panel">
+  <div id="panelOverlay" class="panel-overlay" aria-hidden="true"></div>
+  <aside id="sidePanel" class="side-panel" aria-labelledby="panelTitle" aria-hidden="true">
+    <div class="side-panel-header">
+      <div class="panel-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img">
+          <path d="M5 6.75A2.75 2.75 0 0 1 7.75 4h8.5A2.75 2.75 0 0 1 19 6.75v5.5A2.75 2.75 0 0 1 16.25 15H12l-3.5 3v-3H7.75A2.75 2.75 0 0 1 5 12.25v-5.5Z"></path>
+        </svg>
+      </div>
+      <div class="panel-heading">
+        <h2 id="panelTitle">Let's build something</h2>
+        <p>Have an idea? I would love to hear it.</p>
+      </div>
+      <button id="closeBtn" class="panel-close" type="button" aria-label="Close chat panel">&times;</button>
+    </div>
+
+    <div class="side-panel-content">
+      <div class="chat-bubble">
+        <span class="chat-bubble-label">PeaksValo</span>
+        <p>Tell me what you are working on, and we can turn the idea into a clear next step.</p>
+      </div>
+
+      <div class="panel-actions">
+        <a class="panel-action" href="/contact">
+          <span>
+            <strong>Start a conversation</strong>
+            <small>Share your project details</small>
+          </span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="panel-action" href="/pricing">
+          <span>
+            <strong>Explore services</strong>
+            <small>Find a plan for your idea</small>
+          </span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div id="aiChatMessages" class="chat-log" role="log" aria-live="polite" aria-label="Chat messages"></div>
+      <form class="chat-composer" id="chatComposer">
+        <label class="visually-hidden" for="aiMessage">Message the PeaksValo assistant</label>
+        <input id="aiMessage" name="message" type="text" placeholder="Ask me anything..." autocomplete="off" maxlength="500">
+        <button type="submit" aria-label="Send message" id="aiSendBtn">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </form>
+      <p class="composer-hint">Ask about projects, services, or ideas.</p>
+    </div>
+  </aside>
+</th:block>
+</body>
+</html>

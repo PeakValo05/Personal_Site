@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/hero.css">
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/side-panel.css">
+    <link rel="stylesheet" href="/css/ai-chat.css">
+    <link rel="stylesheet" href="/css/transition.css">
+    <script src="/js/bot.js" defer></script>
+    <script src="/js/side-panel.js" defer></script>
 </head>
 <body class="contact-page">
   <header class="site-header">
@@ -27,6 +32,10 @@
           <a href="/">Home</a>
           <a href="/pricing">Pricing</a>
           <a href="/about">About</a>
+          <button id="toggleBtn" class="nav-toggle" type="button" aria-label="Chat with me" aria-controls="sidePanel" aria-expanded="false">
+            <span class="nav-toggle-dot" aria-hidden="true"></span>
+            Chat with me
+          </button>
           <a href="/contact" class="nav-cta" aria-current="page">Contact Me</a>
         
         </nav>
@@ -34,6 +43,7 @@
     </div>
   </header>
 
+  <th:block th:replace="~{fragments/ai-chat :: panel}"></th:block>
 
   <main class="hero-section">
     <div class="container contact-layout">
@@ -96,5 +106,6 @@
       <p>&copy; 2024 PeaksValo. All rights reserved.</p>
     </div>
   </footer>
+  <script src="/js/transition.js"></script>
 </body>
 </html>

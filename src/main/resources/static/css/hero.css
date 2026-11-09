@@ -217,6 +217,48 @@ button {
   flex-wrap: wrap;
 }
 
+.hero-actions .primary-btn,
+.hero-actions .secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--accent-dark);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hero-actions .primary-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(47, 125, 99, 0.2);
+}
+
+.hero-actions .secondary-btn {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--accent-dark);
+}
+
+.hero-actions .primary-btn:hover,
+.hero-actions .secondary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(47, 125, 99, 0.2);
+}
+
+.hero-actions .secondary-btn:hover {
+  background: #f1f7f3;
+}
+
+.hero-actions .primary-btn:focus-visible,
+.hero-actions .secondary-btn:focus-visible {
+  outline: 3px solid rgba(47, 125, 99, 0.4);
+  outline-offset: 3px;
+}
+
 .stats-row {
   display: flex;
   gap: 2rem;
@@ -391,7 +433,14 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .main-nav a {
+  .main-nav a,
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn {
     transition: none;
+  }
+
+  .hero-actions .primary-btn:hover,
+  .hero-actions .secondary-btn:hover {
+    transform: none;
   }
 }
