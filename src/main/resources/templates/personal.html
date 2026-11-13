@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Load Bootstrap and the site's font before the page-specific styles. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+    <!-- Apply shared page styles and load the chat behavior after HTML parsing. -->
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/side-panel.css">
+    <link rel="stylesheet" href="/css/ai-chat.css">
+    <link rel="stylesheet" href="/css/transition.css">
+    <link rel="stylesheet" href="/css/personal.css">
+    <script src="/js/bot.js" defer></script>
+
+    <!-- Set the document encoding, mobile viewport, and browser-tab title. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+
+  <!-- Site header: the logo links home, and the navigation links to main pages. -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <a class="brand-wrap text-decoration-none text-reset" href="/" aria-label="PeaksValo home">
+          <img src="/images/PeaksValo Mountain Gradient Logo.png" alt="" class="brand-logo">
+          <span class="brand-copy">
+            <span class="brand-name">PeaksValo</span>
+            <small>Software Development Student</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/about">About</a>
+          <!-- This button opens the side panel; its state is managed by side-panel.js. -->
+          <button id="toggleBtn" class="nav-toggle" type="button" aria-controls="sidePanel" aria-expanded="false">
+            <span class="nav-toggle-dot" aria-hidden="true"></span>
+            Chat with me
+          </button>
+          <a href="/contact" class="nav-cta">Contact Me</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- The overlay and side panel are toggled by the chat-panel controls. -->
+  <div id="panelOverlay" class="panel-overlay" aria-hidden="true"></div>
+  <aside id="sidePanel" class="side-panel" aria-labelledby="panelTitle" aria-hidden="true">
+    <div class="side-panel-header">
+      <!-- Decorative chat icon; it is hidden from assistive technology. -->
+      <div class="panel-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img">
+          <path d="M5 6.75A2.75 2.75 0 0 1 7.75 4h8.5A2.75 2.75 0 0 1 19 6.75v5.5A2.75 2.75 0 0 1 16.25 15H12l-3.5 3v-3H7.75A2.75 2.75 0 0 1 5 12.25v-5.5Z"></path>
+        </svg>
+      </div>
+      <div class="panel-heading">
+        <h2 id="panelTitle">Let's build something</h2>
+        <p>Have an idea? I would love to hear it.</p>
+      </div>
+      <!-- The close control hides the side panel. -->
+      <button id="closeBtn" class="panel-close" type="button" aria-label="Close chat panel">&times;</button>
+    </div>
+
+    <div class="side-panel-content">
+      <!-- Introductory message shown at the top of the chat panel. -->
+      <div class="chat-bubble">
+        <span class="chat-bubble-label">PeaksValo</span>
+        <p>Tell me what you are working on, and we can turn the idea into a clear next step.</p>
+      </div>
+
+      <!-- Provide direct links to contact and pricing pages. -->
+      <div class="panel-actions">
+        <a class="panel-action" href="/contact">
+          <span>
+            <strong>Start a conversation</strong>
+            <small>Share your project details</small>
+          </span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="panel-action" href="/pricing">
+          <span>
+            <strong>Explore services</strong>
+            <small>Find a plan for your idea</small>
+          </span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- JavaScript adds chat messages here; live-region attributes announce updates accessibly. -->
+      <div id="aiChatMessages" class="chat-log" role="log" aria-live="polite" aria-label="Chat messages"></div>
+
+      <!-- Submitting this form sends the typed message to the chat behavior in JavaScript. -->
+      <form class="chat-composer" id="chatComposer">
+        <label class="visually-hidden" for="aiMessage">Message the PeaksValo assistant</label>
+        <input id="aiMessage" name="message" type="text" placeholder="Ask me anything..." autocomplete="off" maxlength="500">
+        <button type="submit" aria-label="Send message" id="aiSendBtn">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </form>
+      <p class="composer-hint">Ask about projects, services, or ideas.</p>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- Photo gallery: the buttons request a one-step scroll in the indicated direction. -->
+<div class="photo-gallery">
+  <button type="button" onclick="scrollPhotos(-1)" aria-label="Scroll photos left" class="scroll-btn">&larr;</button>
+
+    <!-- Thymeleaf repeats this block for every personal photo supplied by the controller. -->
+
+<div class="container photo-track" id="photoTrack">
+    <div th:each="personalModel : ${personalModels}" class="photo-card">
+        <!-- Render each model's image URL; Bootstrap keeps the image responsive. -->
+        <img th:src="${personalModel.personalImageURL}" 
+             alt="Personal photo"
+             class="personal-images img-fluid">
+
+    </div> <!-- Close photo-card div -->
+</div> <!-- Close container div -->
+
+<!-- Pass direction 1 to the gallery scrolling function. -->
+<button type="button" onclick="scrollPhotos(1)" aria-label="Scroll photos right" class="scroll-btn">&rarr;</button>
+</div> <!-- Close photo-gallery div -->
+
+
+
+  </main>
+
+  <!-- Footer contains the site's copyright notice. -->
+  <footer class="site-footer">
+    <div class="container d-flex justify-content-center">
+      <p>&copy; 2024 PeaksValo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Load the side-panel and page-transition behavior after the page markup. -->
+  <script src="/js/side-panel.js"></script>
+  <script src="/js/transition.js"></script>
+  <script src="/js/image-scroll-script.js"></script>
+</body>
+</html>
