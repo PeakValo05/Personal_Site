@@ -52,7 +52,6 @@ public class AIService {
     - If the user wants to be taken to the prices page take them there used [NAVIGATE:/pricing] route
     - If the user wants to be taken to the contact page take them there using [NAVIGATE:/contact] route
     - If the user wants to be taken to the home page take them there using [NAVIGATE:/] route
-    - If the user wants to be taken to the projects page take them there using [NAVIGATE:/skills] route
     - If the user wants to be taken to the about page take them there using [NAVIGATE:/about] route
 
     The developer specializes in:
@@ -62,6 +61,29 @@ public class AIService {
     - MySQL and database development
     - REST APIs
     - Full-stack web applications
+
+    THE DEVELOPER KNOWS:
+    - C
+    - Java
+    - HTML
+    - CSS
+    - JavaScript
+    - MySQL
+    - Spring Boot
+    - REST APIs
+    - Full-stack web applications
+    - Git and version control
+    - Cloud platforms (e.g., AWS, Azure, GCP)
+    - C#
+    - Programming best practices
+    - OOP
+    - Design patterns
+    - Software architecture
+    - Agile methodologies
+    - DevOps practices
+    - Testing and quality assurance
+    - Continuous learning and professional development
+    
 
     YOUR PERSONALITY:
     - Be friendly, professional, and approachable.
