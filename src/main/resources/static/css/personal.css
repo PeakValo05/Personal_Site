@@ -41,6 +41,9 @@ body main {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    padding: 40px;
+    
+  
 }
 
 .photo-gallery .container {
@@ -50,6 +53,17 @@ body main {
     flex-wrap: nowrap;
     gap: 10px;
     min-width: 0;
+    scrollbar-width: none;
+    border: 1px solid #e5e7eb;
+    background: white;
+
+  
+    border-radius: 18px;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05),
+        0 12px 30px rgba(0, 0, 0, 0.08);
+
+
 
     padding: 30px;
     overflow-x: auto;
