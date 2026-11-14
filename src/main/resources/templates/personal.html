@@ -117,6 +117,7 @@
 <div class="container photo-track" id="photoTrack">
     <div th:each="personalModel : ${personalModels}" class="photo-card">
         <!-- Render each model's image URL; Bootstrap keeps the image responsive. -->
+        <p th:text="'Images found: ' + ${#lists.size(personalModels)}"></p>
         <img th:src="${personalModel.personalImageURL}" 
              alt="Personal photo"
              class="personal-images img-fluid">
