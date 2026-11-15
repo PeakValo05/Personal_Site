@@ -115,13 +115,52 @@
     <!-- Thymeleaf repeats this block for every personal photo supplied by the controller. -->
 
 <div class="container photo-track" id="photoTrack">
-    <div th:each="personalModel : ${personalModels}" class="photo-card">
-        <!-- Render each model's image URL; Bootstrap keeps the image responsive. -->
-        <p th:text="'Images found: ' + ${#lists.size(personalModels)}"></p>
-        <img th:src="${personalModel.personalImageURL}" 
-             alt="Personal photo"
-             class="personal-images img-fluid">
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-2.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
 
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-3.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-4.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-5.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-8.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-7.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-9.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
+    </div> <!-- Close photo-card div -->
+
+    <div class= "photo-card">
+      <img th:src="@{/personalimages/img-10.jpeg}" 
+           alt="Personal photo"
+           class="personal-images img-fluid">
     </div> <!-- Close photo-card div -->
 </div> <!-- Close container div -->
 
