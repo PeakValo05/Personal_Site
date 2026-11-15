@@ -110,7 +110,9 @@
 
     <!-- Photo gallery: the buttons request a one-step scroll in the indicated direction. -->
 <div class="photo-gallery">
-  <button type="button" onclick="scrollPhotos(-1)" aria-label="Scroll photos left" class="scroll-btn">&larr;</button>
+  <button type="button" onclick="scrollPhotos(-1)" aria-label="Scroll photos left" aria-controls="photoTrack" class="scroll-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+  </button>
 
     <!-- Thymeleaf repeats this block for every personal photo supplied by the controller. -->
 
@@ -164,18 +166,52 @@
     </div> <!-- Close photo-card div -->
 </div> <!-- Close container div -->
 
+
+
 <!-- Pass direction 1 to the gallery scrolling function. -->
-<button type="button" onclick="scrollPhotos(1)" aria-label="Scroll photos right" class="scroll-btn">&rarr;</button>
+<button type="button" onclick="scrollPhotos(1)" aria-label="Scroll photos right" aria-controls="photoTrack" class="scroll-btn">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
 </div> <!-- Close photo-gallery div -->
+
+<hr class="my-4">
+
+<!-- Life Outside Technology Section -->
+<div class="container d-flex justify-content-center text-center flex-column">
+  <h1 style="font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Life Outside Technology</h1>
+  <p>When I'm not working on software projects, I enjoy exploring new places, spending time with family, gaming, and making memories along the way. This page is a small glimpse into my life outside of technology.</p>
+</div>
+
+<!-- Life Outside Technology Cards -->
+<div class="container life-cards">
+  <div class="life-card">
+    <span class="life-card-icon"><img th:src="@{/svg-images/mountain-outlined-svgrepo-com.svg}" alt=""></span>
+    <h2>Adventures</h2>
+    <p>Exploring new places and making memories.</p>
+  </div>
+  <div class="life-card">
+    <span class="life-card-icon"><img th:src="@{/svg-images/gaming-pad-alt-1-svgrepo-com.svg}" alt=""></span>
+    <h2>Gaming</h2>
+    <p>Relaxing and enjoying my favorite games.</p>
+  </div>
+  <div class="life-card">
+    <span class="life-card-icon"><img th:src="@{/svg-images/heart-svgrepo-com.svg}" alt=""></span>
+    <h2>Family</h2>
+    <p>Spending time with the people who matter most.</p>
+  </div>
+</div>
 
 
 
   </main>
 
+
+
+
   <!-- Footer contains the site's copyright notice. -->
   <footer class="site-footer">
     <div class="container d-flex justify-content-center">
-      <p>&copy; 2024 PeaksValo. All rights reserved.</p>
+      <p>&copy; 2026 PeaksValo. All rights reserved.</p>
     </div>
   </footer>
 

@@ -10,25 +10,54 @@ body main {
 
 .personal-images {
     width: 100%;
-    max-width: 400px;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-card {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #e8eee9;
+    box-shadow: 0 4px 12px rgba(19, 34, 56, 0.12);
+}
+
+.photo-card:hover .personal-images {
+    transform: scale(1.035);
 }
 .scroll-btn {
-    border: 1px solid #2f7d63;
-    background-color: white;
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(47, 125, 99, 0.2);
+    border-radius: 50%;
+    background: white;
     color: #2f7d63;
-    /* border: none; */
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(19, 34, 56, 0.1);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .scroll-btn:active {
     transform: scale(0.95);
+}
+
+.scroll-btn:focus-visible {
+    outline: 3px solid rgba(47, 125, 99, 0.45);
+    outline-offset: 3px;
 }
 
 .scroll-btn:hover {
@@ -41,6 +70,7 @@ body main {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 12px;
     padding: 40px;
     
   
@@ -51,7 +81,7 @@ body main {
     flex: 1 1 0;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 16px;
     min-width: 0;
     scrollbar-width: none;
     border: 1px solid #e5e7eb;
@@ -69,11 +99,87 @@ body main {
 }
 
 .photo-gallery .container > div {
-    flex: 0 0 400px;
+    flex: 0 0 min(400px, 100%);
+}
+
+.life-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 800px;
+    margin-bottom: 24px;
+}
+
+.life-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #494949;
+    border-radius: 16px;
+    background: #2d2d2d;
+    color: #e8e8e8;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.life-card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.life-card-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #000;
+}
+
+.life-card-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.life-card h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.life-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 @media (max-width: 576px) {
+    .photo-gallery {
+        gap: 8px;
+        padding: 24px 12px;
+    }
+
+    .photo-gallery .container {
+        padding: 16px;
+    }
+
     .photo-gallery .container > div {
-        flex-basis: 80vw;
+        flex-basis: 100%;
+    }
+
+    .life-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .personal-images {
+        transition: none;
+    }
+
+    .photo-card:hover .personal-images {
+        transform: none;
     }
 }
