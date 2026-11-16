@@ -279,6 +279,15 @@
   background: #f1f7f3;
 }
 
+.secondary-btn.about-primary-btn {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.secondary-btn.about-primary-btn:hover {
+  background: var(--accent-dark);
+}
+
 
 .secondary-btn:focus-visible {
   outline: 3px solid rgba(47, 125, 99, 0.4);
