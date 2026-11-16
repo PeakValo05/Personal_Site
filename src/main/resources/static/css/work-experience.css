@@ -1,0 +1,415 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body main {
+    flex: 1;
+}
+
+.personal-images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-card {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #e8eee9;
+    box-shadow: 0 4px 12px rgba(19, 34, 56, 0.12);
+}
+
+.photo-card:hover .personal-images {
+    transform: scale(1.035);
+}
+.scroll-btn {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(47, 125, 99, 0.2);
+    border-radius: 50%;
+    background: white;
+    color: #2f7d63;
+    box-shadow: 0 2px 8px rgba(19, 34, 56, 0.1);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.scroll-btn:active {
+    transform: scale(0.95);
+}
+
+.scroll-btn:focus-visible {
+    outline: 3px solid rgba(47, 125, 99, 0.45);
+    outline-offset: 3px;
+}
+
+.scroll-btn:hover {
+    background-color: #2f7d63;
+    color: white;
+}
+/* Photo gallery container */
+.photo-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+    padding: 40px;
+    
+  
+}
+
+.photo-gallery .container {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px;
+    min-width: 0;
+    scrollbar-width: none;
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 18px;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05),
+        0 12px 30px rgba(0, 0, 0, 0.08);
+
+
+
+    padding: 30px;
+    overflow-x: auto;
+
+}
+
+.photo-gallery .container > div {
+    flex: 0 0 min(400px, 100%);
+}
+
+.life-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 800px;
+    margin-bottom: 24px;
+}
+
+.life-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #494949;
+    border-radius: 16px;
+    background: #2d2d2d;
+    color: #e8e8e8;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.life-card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.life-card-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #000;
+}
+
+.life-card-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.life-card h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.life-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.experience-header {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.experience-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 0 12px;
+    color: #2f7d63;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.experience-eyebrow::before,
+.experience-eyebrow::after {
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #d7dfdb;
+}
+
+.experience-header h1 {
+    margin: 0 0 8px;
+    color: #132238;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+}
+
+.experience-intro {
+    margin: 0;
+    color: #53657c;
+    font-size: 0.9rem;
+}
+
+.experience-timeline {
+    position: relative;
+    width: min(900px, calc(100% - 2rem));
+    margin: 40px auto 64px;
+    padding-left: 38px;
+}
+
+.experience-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 34px;
+    height: calc(100% + 24px);
+    width: 2px;
+    background: #b7d2c6;
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.experience-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 26px;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #f4f1ea;
+    border-radius: 50%;
+    background: #2f7d63;
+    box-shadow: 0 0 0 2px #2f7d63;
+    z-index: 1;
+}
+
+.experience-item-past::before {
+    background: #194b83;
+    box-shadow: 0 0 0 2px #194b83;
+}
+
+.experience-card {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 24px;
+    background: white;
+    padding: 22px;
+    border: 1px solid rgba(19, 34, 56, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(19, 34, 56, 0.08);
+}
+
+.experience-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #e8edeb;
+}
+
+.experience-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: #ddf3e7;
+    color: #1f6b4d;
+}
+
+.experience-item-past .experience-icon {
+    background: #e6eef9;
+    color: #1b3e60;
+}
+
+.experience-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.experience-logo {
+    width: 150px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.experience-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.experience-title h2 {
+    margin: 0;
+    color: #132238;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.experience-current {
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #ddf3e7;
+    color: #1f6b4d;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.experience-current::before {
+    content: "\2022";
+    margin-right: 5px;
+}
+
+.experience-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 8px;
+    color: #53657c;
+    font-size: 0.8rem;
+}
+
+.experience-date svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+
+.experience-description {
+    margin: 0 0 12px;
+    color: #53657c;
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience-skills li {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #ddf3e7;
+    color: #1f6b4d;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.experience-item-past .experience-skills li {
+    background: #e6eef9;
+    color: #1b3e60;
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 576px) {
+    .experience-eyebrow::before,
+    .experience-eyebrow::after {
+        width: 30px;
+    }
+
+    .experience-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .experience-brand {
+        align-items: center;
+        padding: 0 0 16px;
+        border-right: 0;
+        border-bottom: 1px solid #e8edeb;
+    }
+
+    .photo-gallery {
+        gap: 8px;
+        padding: 24px 12px;
+    }
+
+    .photo-gallery .container {
+        padding: 16px;
+    }
+
+    .photo-gallery .container > div {
+        flex-basis: 100%;
+    }
+
+    .life-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .personal-images {
+        transition: none;
+    }
+
+    .photo-card:hover .personal-images {
+        transform: none;
+    }
+}
